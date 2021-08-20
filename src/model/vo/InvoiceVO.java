@@ -6,7 +6,6 @@ public class InvoiceVO {
     private InvoiceItemsVO[] items;
     private int totalValue;
 
-
     public int getId() {
         return this.id;
     }
@@ -14,7 +13,7 @@ public class InvoiceVO {
     public void setId(int id) {
         if (id < 0) {
             System.out.println("A quantidade não pode ser menor que zero");
-        } else{
+        } else {
             this.id = id;
         }
     }
@@ -24,7 +23,24 @@ public class InvoiceVO {
     }
 
     public void setItems(InvoiceItemsVO[] items) {
-        this.items = items;
+        if (items == null) {
+            System.out.println("ta errado");
+        } else {
+            boolean test = true;
+            for (int i = 0; i < items.length; i++) {
+                if (items[i] == null) {
+                    System.out.println("ta errado");
+                    test = false;
+                    break;
+                }
+            }
+            if (test) {
+                this.items = items;
+            } else {
+                System.out.println("tem um errado");
+            }
+        }
+
     }
 
     public int getTotalValue() {
@@ -34,10 +50,9 @@ public class InvoiceVO {
     public void setTotalValue(int totalValue) {
         if (totalValue < 0) {
             System.out.println("A quantidade não pode ser menor que zero");
-        } else{
+        } else {
             this.totalValue = totalValue;
         }
     }
-
 
 }

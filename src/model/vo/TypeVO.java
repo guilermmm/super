@@ -7,7 +7,6 @@ public class TypeVO {
     private String name;
     private SellingForm sellingForm;
 
-
     public int getId() {
         return this.id;
     }
@@ -15,7 +14,7 @@ public class TypeVO {
     public void setId(int id) {
         if (id < 0) {
             System.out.println("A quantidade não pode ser menor que zero");
-        } else{
+        } else {
             this.id = id;
         }
     }
@@ -27,7 +26,7 @@ public class TypeVO {
     public void setTypeCode(int typeCode) {
         if (typeCode < 0) {
             System.out.println("A quantidade não pode ser menor que zero");
-        } else{
+        } else {
             this.typeCode = typeCode;
         }
     }
@@ -37,9 +36,13 @@ public class TypeVO {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name == null || name.isEmpty()) {
+            System.out.println("ta errado");
+        } else {
+            this.name = name;
+        }
     }
-    
+
     public SellingForm getSellingForm() {
         return this.sellingForm;
     }
@@ -47,6 +50,5 @@ public class TypeVO {
     public void setSellingForm(SellingForm sellingForm) {
         this.sellingForm = sellingForm;
     }
-
 
 }

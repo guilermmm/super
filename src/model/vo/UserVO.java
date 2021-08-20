@@ -24,7 +24,11 @@ public class UserVO {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name == null || name.isEmpty()) {
+            System.out.println("ta errado");
+        } else {
+            this.name = name;
+        }
     }
 
     public String getCpf() {
@@ -46,7 +50,9 @@ public class UserVO {
     }
 
     public void setPermission(Permission permission) {
-        this.permission = permission;
+        if (permission != null) {
+            this.permission = permission;
+        }
     }
 
     public String toString() {

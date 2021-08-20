@@ -4,13 +4,14 @@ public class InvoiceItemsVO {
     private ItemsVO item;
     private int quantity;
 
-
     public ItemsVO getItem() {
         return this.item;
     }
 
     public void setItem(ItemsVO item) {
-        this.item = item;
+        if (item != null) {
+            this.item = item;
+        }
     }
 
     public int getQuantity() {
@@ -20,10 +21,10 @@ public class InvoiceItemsVO {
     public void setQuantity(int quantity) {
         if (quantity < 0) {
             System.out.println("A quantidade não pode ser menor que zero");
-        } else{
+        } else {
             this.quantity = quantity;
         }
-        
+
     }
 
 }
