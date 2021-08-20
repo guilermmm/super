@@ -1,22 +1,42 @@
+import java.util.Scanner;
+
 import model.vo.*;
 
-class Main {
+public class Main {
+    static private Scanner scanner = new Scanner(System.in);
+
+    static <T> void print(T str) {
+        System.out.println(str);
+    }
+
+    static String input(String prompt) {
+        System.out.print(prompt);
+        return scanner.nextLine();
+    }
+
+    static int intInput(String prompt) {
+        try {
+            return Integer.parseInt(input(prompt));
+        } catch (NumberFormatException e) {
+            return 0;
+        }
+    }
+
     public static void main(String[] args) {
 
-        ItemsVO paozinho = new ItemsVO();
-        paozinho.setName("paozinho");
-        paozinho.setBrand("bauducco");
-        paozinho.setQuantStock(35);
+        TypeVO bauducco = new TypeVO();
+        bauducco.setId(1);
+        bauducco.setName("paozinho");
+        bauducco.setSellingForm(SellingForm.unit);
+        bauducco.setTypeCode(01);
 
-        System.out.println(paozinho);
-
-        UserVO gerente = new UserVO();
-        gerente.setCpf("712.018.454-75");
-        gerente.setId(1);
-        gerente.setName("guilerm");
-        gerente.setPermission(Permission.adm);
-
-        System.out.println(gerente);
-
+        ItemVO Items = new ItemVO();
+        Items.setId(intInput("ID: "));
+        Items.setName(input("Nome: "));
+        Items.setBrand(input("Marca: "));
+        Items.setPrice(intInput("Preço: "));
+        Items.setType(bauducco);
+        Items.setBarCode(input("Codigo de Barras: "));
+        print(Items);
     }
 }

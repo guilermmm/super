@@ -1,10 +1,10 @@
 package model.vo;
 
-public class ItemsVO {
+public class ItemVO {
     private int id;
     private String name;
     private String brand;
-    private int barCode;
+    private String barCode;
     private int quantStock;
     private int price;
     private TypeVO type;
@@ -26,7 +26,11 @@ public class ItemsVO {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (name == null || name.isEmpty()) {
+            System.out.println("ta errado");
+        } else {
+            this.name = name;
+        }
     }
 
     public String getBrand() {
@@ -35,19 +39,23 @@ public class ItemsVO {
 
     public void setBrand(String brand) {
         if (brand == null || brand.isEmpty()) {
+            System.out.println("ta errado");
+        } else {
+            this.brand = brand;
         }
 
     }
 
-    public int getBarCode() {
+    public String getBarCode() {
         return this.barCode;
     }
 
-    public void setBarCode(int barCode) {
-        if (barCode < 0) {
-            System.out.println("A quantidade não pode ser menor que zero");
-        } else {
+    public void setBarCode(String barCode) {
+
+        if (barCode != null && barCode.matches("^\\d{13}$")) {
             this.barCode = barCode;
+        } else {
+            System.out.println("ta errado");
         }
     }
 
@@ -84,5 +92,11 @@ public class ItemsVO {
             this.type = type;
         }
 
+    }
+
+    public String toString() {
+        return "\nId: " + getId() + "\nName: " + getName() + "\nBrand: " + getBrand() + "\nBar Code: " + getBarCode()
+                + "\nQuantity in Stock: " + getQuantStock() + "\nPrice: " + getPrice() + "\nType: "
+                + getType().getName();
     }
 }

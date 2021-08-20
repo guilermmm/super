@@ -1,14 +1,14 @@
 package model.vo;
 
 public class InvoiceItemsVO {
-    private ItemsVO item;
+    private ItemVO item;
     private int quantity;
 
-    public ItemsVO getItem() {
+    public ItemVO getItem() {
         return this.item;
     }
 
-    public void setItem(ItemsVO item) {
+    public void setItem(ItemVO item) {
         if (item != null) {
             this.item = item;
         }
@@ -24,7 +24,5 @@ public class InvoiceItemsVO {
         } else {
             this.quantity = quantity;
         }
-
     }
-
 }
