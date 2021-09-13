@@ -52,7 +52,7 @@ public class ItemVO {
 
     public void setBarCode(String barCode) {
 
-        if (barCode != null && barCode.matches("^\\d{13}$")) {
+        if (barCode != null && barCode.matches("^\\d{4}$")) {
             this.barCode = barCode;
         } else {
             System.out.println("ta errado");
