@@ -61,10 +61,13 @@ public class Test {
 		dao4.edit(typevo1);
 		// dao4.insert(typevo1);
 
+		int e = 6;
+
 		TypeVO typevo2 = new TypeVO();
-		typevo2.setName("industrializado");
-		typevo2.setSellingForm(SellingForm.unit);
-		typevo2.setTypeCode(5);
+		typevo2.setName("fruta");
+		typevo2.setSellingForm(SellingForm.kg);
+		typevo2.setTypeCode(7);
+		typevo2.setId(e);
 		// dao4.insert(typevo2);
 
 		// List<TypeVO> types = dao4.list();
@@ -72,5 +75,48 @@ public class Test {
 		// for (TypeVO v0 : types) {
 		// System.out.println(v0);
 		// }
+
+		// Testing item
+
+		ItemDAO dao6 = new ItemDAO();
+
+		ItemVO itemvo1 = new ItemVO();
+		itemvo1.setName("banana");
+		itemvo1.setType(typevo2);
+		itemvo1.setBrand("nanas");
+		itemvo1.setBarCode("0001");
+		itemvo1.setPrice(299);
+		itemvo1.setQuantStock(70);
+		// dao6.insert(itemvo1);
+
+		// ItemVO itemvo2 = new ItemVO();
+		// itemvo2.setName("banana");
+		// itemvo2.setType(typevo2);
+		// itemvo2.setBrand("nanas");
+		// itemvo2.setBarCode("0001");
+		// itemvo2.setPrice(299);
+		// itemvo2.setQuantStock(70);
+		// dao6.insert(itemvo2);
+
+		ItemTypeDAO itemtypedao = new ItemTypeDAO();
+
+		List<ItemVO> items = dao6.list();
+		for (ItemVO v0 : items) {
+			TypeVO typeofItem = itemtypedao.getTypeByItem(v0);
+			v0.setType(typeofItem);
+			System.out.println(v0);
+		}
+
+		List<ItemVO> itemsbytype = itemtypedao.getItemsByType(typevo2);
+
+		System.out.println(itemsbytype);
+
+		// Testing Invoice
+
+		// InvoiceDAO dao8 = new InvoiceDAO();
+
+		// InvoiceVO invoicevo1 = new InvoiceVO();
+		// invoicevo1.setItems();
+
 	}
 }

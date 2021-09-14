@@ -5,10 +5,10 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class BaseDAO {
-	Connection conn = null;
-	String url = "jdbc:mariadb://localhost:3306/super";
-	String user = "root";
-	String password = "lerm";
+	private Connection conn = null;
+	private String url = "jdbc:mariadb://localhost:3306/super";
+	private String user = "root";
+	private String password = "lerm";
 
 	public Connection getConnection() {
 		if (conn == null) {

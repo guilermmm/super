@@ -13,11 +13,11 @@ import model.vo.UserVO;
 public class UserDAO extends BaseDAO {
 
 	public void insert(UserVO vo) {
-		conn = getConnection();
+
 		String sql = "insert into users (name,cpf,permission) values (?,?,?)";
 		PreparedStatement ptst;
 		try {
-			ptst = conn.prepareStatement(sql);
+			ptst = getConnection().prepareStatement(sql);
 			ptst.setString(1, vo.getName());
 			ptst.setString(2, vo.getCpf());
 			ptst.setString(3, vo.getPermission().toString());
@@ -28,11 +28,11 @@ public class UserDAO extends BaseDAO {
 	}
 
 	public void remove(UserVO vo) {
-		conn = getConnection();
+
 		String sql = "delete from users where id = ?";
 		PreparedStatement ptst;
 		try {
-			ptst = conn.prepareStatement(sql);
+			ptst = getConnection().prepareStatement(sql);
 			ptst.setInt(1, vo.getId());
 			ptst.executeUpdate();
 		} catch (SQLException e) {
@@ -41,13 +41,13 @@ public class UserDAO extends BaseDAO {
 	}
 
 	public List<UserVO> list() {
-		conn = getConnection();
+
 		String sql = "select * from users";
 		Statement st;
 		ResultSet rs;
 		List<UserVO> users = new ArrayList<UserVO>();
 		try {
-			st = conn.createStatement();
+			st = getConnection().createStatement();
 			rs = st.executeQuery(sql);
 
 			while (rs.next()) {
@@ -77,11 +77,11 @@ public class UserDAO extends BaseDAO {
 	}
 
 	public void edit(UserVO vo) {
-		conn = getConnection();
+
 		String sql = "update users set name = ?, cpf = ?, permission = ? where id = ?";
 		PreparedStatement ptst;
 		try {
-			ptst = conn.prepareStatement(sql);
+			ptst = getConnection().prepareStatement(sql);
 			ptst.setString(1, vo.getName());
 			ptst.setString(2, vo.getCpf());
 			ptst.setString(3, vo.getPermission().toString());

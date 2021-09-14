@@ -8,16 +8,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import model.vo.ItemVO;
-import model.vo.TypeVO;
 
 public class ItemDAO extends BaseDAO {
 
 	public void insert(ItemVO vo) {
-		conn = getConnection();
+
 		String sql = "insert into items (type_id, name, brand, price, stock_quantity, bar_code) values (?,?,?,?,?,?)";
 		PreparedStatement ptst;
 		try {
-			ptst = conn.prepareStatement(sql);
+			ptst = getConnection().prepareStatement(sql);
 			ptst.setInt(1, vo.getType().getId());
 			ptst.setString(2, vo.getName());
 			ptst.setString(3, vo.getBrand());
@@ -31,11 +30,11 @@ public class ItemDAO extends BaseDAO {
 	}
 
 	public void remove(ItemVO vo) {
-		conn = getConnection();
+
 		String sql = "delete from items where id = ?";
 		PreparedStatement ptst;
 		try {
-			ptst = conn.prepareStatement(sql);
+			ptst = getConnection().prepareStatement(sql);
 			ptst.setInt(1, vo.getId());
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -43,13 +42,13 @@ public class ItemDAO extends BaseDAO {
 	}
 
 	public List<ItemVO> list() {
-		conn = getConnection();
+
 		String sql = "select * from items";
 		Statement st;
 		ResultSet rs;
 		List<ItemVO> items = new ArrayList<ItemVO>();
 		try {
-			st = conn.createStatement();
+			st = getConnection().createStatement();
 			rs = st.executeQuery(sql);
 
 			while (rs.next()) {
@@ -70,11 +69,12 @@ public class ItemDAO extends BaseDAO {
 	}
 
 	public void edit(ItemVO vo) {
-		conn = getConnection();
+
 		String sql = "update items set type_id = ?, name = ?, brand = ?, price = ?, stock_quantity = ?, bar_code = ? where id = ?";
 		PreparedStatement ptst;
 		try {
-			ptst = conn.prepareStatement(sql);
+			ptst = getConnection().prepareStatement(sql);
+
 			ptst.setInt(1, vo.getType().getId());
 			ptst.setString(2, vo.getName());
 			ptst.setString(3, vo.getBrand());
@@ -87,5 +87,4 @@ public class ItemDAO extends BaseDAO {
 			e.printStackTrace();
 		}
 	}
-
 }
