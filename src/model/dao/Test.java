@@ -10,42 +10,67 @@ public class Test {
 
 		int a = 9;
 		int b = 7;
+		int c = 11;
+
+		// Testing user
 
 		UserDAO dao2 = new UserDAO();
-		UserVO vo = new UserVO();
-		vo.setCpf("712.018.454-75");
-		vo.setName("mlerm");
-		vo.setId(a);
-		vo.setPermission(Permission.adm);
-		dao2.insert(vo);
+		UserVO uservo1 = new UserVO();
+		uservo1.setCpf("712.018.454-75");
+		uservo1.setName("mlerm");
+		uservo1.setId(a);
+		uservo1.setPermission(Permission.adm);
+		// dao2.insert(uservo1);
 
-		UserVO vo1 = new UserVO();
-		vo1.setCpf("123.456.789-01");
-		vo1.setName("lermlerm");
-		// dao2.insert(vo1);
+		UserVO uservo2 = new UserVO();
+		uservo2.setCpf("123.456.789-01");
+		uservo2.setName("lermlerm");
+		uservo2.setId(c);
+		uservo2.setPermission(Permission.non_adm);
+		// dao2.insert(uservo2);
 
-		UserVO vo2 = new UserVO();
-		vo2.setCpf("848.952.144-12");
-		vo2.setName("mguilerm");
-		vo2.setId(b);
-		// dao2.insert(vo2);
+		UserVO uservo3 = new UserVO();
+		uservo3.setCpf("848.952.144-12");
+		uservo3.setName("mguilerm");
+		uservo3.setId(b);
+		uservo3.setPermission(Permission.non_adm);
+		// dao2.insert(uservo3);
 
-		// dao2.edit(vo);
-		// dao2.edit(vo2);
+		// dao2.edit(uservo1);
+		// dao2.edit(uservo2);
+		// dao2.edit(uservo3);
+
+		// List<UserVO> users = dao2.list();
+
+		// for (UserVO v0 : users) {
+		// System.out.println(v0);
+		// }
+
+		// Testing type
 
 		TypeDAO dao4 = new TypeDAO();
 
-		TypeVO vo3 = new TypeVO();
-		vo3.setName("fruta");
-		vo3.setSellingForm(SellingForm.kg);
-		vo3.setTypeCode(1);
-		dao4.insert(vo3);
+		int d = 2;
 
-		List<UserVO> users = dao2.list();
+		TypeVO typevo1 = new TypeVO();
+		typevo1.setName("salgado");
+		typevo1.setSellingForm(SellingForm.unit);
+		typevo1.setTypeCode(10);
+		typevo1.setId(d);
 
-		for (UserVO v0 : users) {
-			System.out.println(v0.getName());
-		}
+		dao4.edit(typevo1);
+		// dao4.insert(typevo1);
 
+		TypeVO typevo2 = new TypeVO();
+		typevo2.setName("industrializado");
+		typevo2.setSellingForm(SellingForm.unit);
+		typevo2.setTypeCode(5);
+		// dao4.insert(typevo2);
+
+		// List<TypeVO> types = dao4.list();
+
+		// for (TypeVO v0 : types) {
+		// System.out.println(v0);
+		// }
 	}
 }
