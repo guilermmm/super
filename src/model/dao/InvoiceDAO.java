@@ -30,4 +30,18 @@ public class InvoiceDAO extends BaseDAO {
 			e.printStackTrace();
 		}
 	}
+
+	public void edit(InvoiceVO vo) {
+
+		String sql = "update invoice set total_value where id = ?";
+		PreparedStatement ptst;
+		try {
+			ptst = getConnection().prepareStatement(sql);
+			ptst.setInt(1, vo.getTotalValue());
+			ptst.setInt(2, vo.getId());
+			ptst.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 }
