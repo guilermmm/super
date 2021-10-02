@@ -10,7 +10,7 @@ import java.util.List;
 import model.vo.Permission;
 import model.vo.UserVO;
 
-public class UserDAO extends BaseDAO {
+public class UserDAO extends BaseDAO implements BaseInterDAO<UserVO>{
 
 	public void insert(UserVO vo) {
 

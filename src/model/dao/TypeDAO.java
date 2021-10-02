@@ -9,7 +9,7 @@ import java.util.List;
 import model.vo.SellingForm;
 import model.vo.TypeVO;
 
-public class TypeDAO extends BaseDAO {
+public class TypeDAO extends BaseDAO implements BaseInterDAO<TypeVO>{
 
 	public void insert(TypeVO vo) {
 

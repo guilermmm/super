@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class BaseDAO {
+public abstract class BaseDAO {
 	private Connection conn = null;
 	private String url = "jdbc:mariadb://localhost:3306/super";
 	private String user = "root";

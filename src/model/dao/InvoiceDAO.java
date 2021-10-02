@@ -2,10 +2,11 @@ package model.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 
 import model.vo.InvoiceVO;
 
-public class InvoiceDAO extends BaseDAO {
+public class InvoiceDAO extends BaseDAO implements BaseInterDAO<InvoiceVO>{
 
 	public void insert(InvoiceVO vo) {
 		String sql = "insert into invoice (total_value) value (?)";
@@ -43,5 +44,11 @@ public class InvoiceDAO extends BaseDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+
+	@Override
+	public List<InvoiceVO> list() throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

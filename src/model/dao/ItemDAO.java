@@ -9,7 +9,7 @@ import java.util.List;
 
 import model.vo.ItemVO;
 
-public class ItemDAO extends BaseDAO {
+public class ItemDAO extends BaseDAO implements BaseInterDAO<ItemVO>{
 
 	public void insert(ItemVO vo) {
 
