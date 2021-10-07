@@ -23,7 +23,6 @@ public class ItemTypeDAO extends BaseDAO {
       rs = ptst.executeQuery();
 
       if (rs.next()) {
-        System.out.println("acho");
         String stringSellingForm = rs.getString("typeitem.selling_form");
         SellingForm enumSellingForm = SellingForm.kg;
         switch (stringSellingForm) {

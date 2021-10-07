@@ -7,7 +7,7 @@ import java.util.List;
 import model.vo.InvoiceItemVO;
 import model.vo.InvoiceVO;
 
-public class InvoiceItemDAO extends BaseDAO implements BaseInterDAO<InvoiceItemVO>{
+public class InvoiceItemDAO extends BaseDAO {
 
 	public void insert(InvoiceVO invoicevo, InvoiceItemVO vo) {
 		String sql = "insert into invoice_items (invoice_id, item_id, quantity) values (?,?,?)";
@@ -33,23 +33,5 @@ public class InvoiceItemDAO extends BaseDAO implements BaseInterDAO<InvoiceItemV
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-	}
-
-	@Override
-	public void insert(InvoiceItemVO enity) throws SQLException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void edit(InvoiceItemVO enity) throws SQLException {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public List<InvoiceItemVO> list() throws SQLException {
-		// TODO Auto-generated method stub
-		return null;
 	}
 }
