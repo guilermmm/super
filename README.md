@@ -1,1 +1,0 @@
-Sistema Desktop de um supermercado desenvolvido em Java para a disciplina de Programação Orientada a Objetos
