@@ -2,7 +2,6 @@ package model.dao;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.List;
 
 import model.vo.InvoiceItemVO;
 import model.vo.InvoiceVO;
