@@ -1,5 +1,5 @@
 package model.vo;
 
 public enum Permission {
-    nonAdm, adm
+    non_adm, adm
 }

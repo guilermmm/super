@@ -3,7 +3,7 @@ package model.vo;
 public class InvoiceVO {
 
     private int id;
-    private InvoiceItemsVO[] items;
+    private InvoiceItemVO[] items;
     private int totalValue;
 
     public int getId() {
@@ -18,11 +18,11 @@ public class InvoiceVO {
         }
     }
 
-    public InvoiceItemsVO[] getItems() {
+    public InvoiceItemVO[] getItems() {
         return this.items;
     }
 
-    public void setItems(InvoiceItemsVO[] items) {
+    public void setItems(InvoiceItemVO[] items) {
         if (items == null) {
             System.out.println("ta errado");
         } else {

@@ -51,4 +51,9 @@ public class TypeVO {
         this.sellingForm = sellingForm;
     }
 
+    public String toString() {
+        return "Id: " + getId() + "\nName: " + getName() + "\nType Code: " + getTypeCode() + "\nSelling Form: "
+                + getSellingForm();
+    }
+
 }

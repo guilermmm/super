@@ -1,6 +1,6 @@
 package model.vo;
 
-public class InvoiceItemsVO {
+public class InvoiceItemVO {
     private ItemVO item;
     private int quantity;
 
