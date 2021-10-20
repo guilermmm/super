@@ -6,7 +6,7 @@ import java.util.List;
 
 import model.vo.InvoiceVO;
 
-public class InvoiceDAO extends BaseDAO implements BaseInterDAO<InvoiceVO>{
+public class InvoiceDAO extends BaseDAO implements BaseInterDAO<InvoiceVO> {
 
 	public void insert(InvoiceVO vo) {
 		String sql = "insert into invoice (total_value) value (?)";
@@ -48,7 +48,6 @@ public class InvoiceDAO extends BaseDAO implements BaseInterDAO<InvoiceVO>{
 
 	@Override
 	public List<InvoiceVO> list() throws SQLException {
-		// TODO Auto-generated method stub
 		return null;
 	}
 }
