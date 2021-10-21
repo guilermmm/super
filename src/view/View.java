@@ -50,11 +50,11 @@ public class View extends Application {
     }
   }
 
-  public static void editItem() throws Exception {
-    Parent root = FXMLLoader.load(View.class.getResource("viewVE/EditPopUpScreen.fxml"));
+  public static void deleteItem() throws Exception {
+    Parent root = FXMLLoader.load(View.class.getResource("viewVE/DeletePopUpScreen.fxml"));
     Scene scene = new Scene(root);
 
-    createPopUp(scene, "Editar Item");
+    createPopUp(scene, "Deletar Item");
   }
 
 }

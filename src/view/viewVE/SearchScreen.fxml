@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="292.0" prefWidth="680.0" style="-fx-background-color: #7c7c7c;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ChoiceBox layoutX="526.0" layoutY="29.0" prefHeight="25.0" prefWidth="134.0" style="-fx-background-color: #c7c7c7; -fx-border-radius: 10px;" />
+      <TextField layoutX="19.0" layoutY="29.0" prefHeight="26.0" prefWidth="498.0" style="-fx-background-color: #c7c7c7;" text="..." />
+      <ImageView fitHeight="222.0" fitWidth="643.0" layoutX="14.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@SearchScreen.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="543.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@SearchButtons.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
